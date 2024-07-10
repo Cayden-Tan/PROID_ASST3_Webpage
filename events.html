@@ -1,12 +1,10 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACE PROID Assignment Project</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/events.css">
 </head>
@@ -27,9 +25,6 @@
                             <a class="nav-link" href="events.html">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="activities.html">Activities</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="enquiry.html">Enquire</a>
                         </li>
                     </ul>
@@ -40,20 +35,10 @@
             <section id="events" class="mb-5">
                 <h2 id="title" class="text-center">Events</h2>
                 <div class="d-flex justify-content-center mb-4">
-                    <select class="form-control w-50" id="monthSelect" onchange="showEvents(this.value)">
-                        <option value="">All Events</option>
-                        <option value="January">January</option>
-                        <option value="February">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>
+                    <select class="form-control w-50" id="categorySelect" onchange="showEventsByCategory(this.value)">
+                        <option value="ongoing">Ongoing Events</option>
+                        <option value="upcoming">Upcoming Events</option>
+                        <option value="community">Community Projects</option>
                     </select>
                 </div>
                 <div class="row" id="event-list"></div>
@@ -67,94 +52,119 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         const events = {
-            July: [
-                {
-                    title: 'New Year Celebration',
-                    date: '10th July 2024 - 14th July 2024',
-                    description: 'Celebrate the new year with us!',
-                    imageUrl: 'Images/sampleposter2.jpg',
-                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236'
-                },
-                {
-                    title: 'Community Murals',
-                    date: '18th July 2024 - 24th July 2024',
-                    description: "Come see community murals!",
-                    imageUrl: 'Images/sampleposter2.jpg',
-                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236'
-                }
-                // Add more events for January
-            ],
             August: [
                 {
-                    title: 'Crochet Murals',
-                    date: '16th August 2024 - 24th August 2024',
-                    description: 'Join us for a Valentine\'s Day party!',
-                    imageUrl: 'Images/sampleposter2.jpg',
-                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236'
-
+                    title: 'Community Chalk Murals',
+                    date: '1st August 2024 - 11th August 2024',
+                    time: '9.00 AM - 6.00 PM',
+                    description: "Make you mark on ACE HUB with Chalk Murals! ",
+                    imageUrl: 'Images/Chalk Mural Poster.PNG',
+                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236',
+                    category: 'community'
+                },
+                {
+                    title: 'Crochet Project',
+                    date: '19th August 2024 - 21st August 2024',
+                    time: '9.00 AM - 6.00 PM',
+                    description: 'Join us to learn how to Crochet! ',
+                    imageUrl: 'Images/Crochet.PNG',
+                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236',
+                    category: 'community'
+                },
+                {
+                    title: 'Art Jamming',
+                    date: 'Every Mon, Tue, Fri, Sat and Sun ',
+                    time: '1.00 PM - 6.00 PM',
+                    description: 'Unlease you inner creativity on canvas! ',
+                    imageUrl: 'Images/Art Jamming.PNG',
+                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236',
+                    category: 'ongoing'
+                },
+                {
+                    title: 'HEAR-ME-OUT',
+                    date: 'Every Mon, Wed, Fri and Sat*',
+                    time: '1.00 PM - 9.00 PM',
+                    description: 'Come and chat with our befrienders when you need a listening ear! ',
+                    imageUrl: 'Images/Hear Me Out.PNG',
+                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236',
+                    category: 'ongoing'
+                },
+                {
+                    title: 'B.Y.O.B',
+                    date: '18th August 2024',
+                    time: '2.00 PM - 5.00 PM',
+                    description: "Come see community murals!",
+                    imageUrl: 'Images/BYOB.PNG',
+                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236',
+                    category: 'upcoming'
+                },
+                {
+                    title: 'Yoga',
+                    date: '10th August 2024',
+                    time: '9.OO AM - 10.30 AM',
+                    description: "Unwind and Relax with Yoga!",
+                    imageUrl: 'Images/Yoga.PNG',
+                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236',
+                    category: 'upcoming'
+                },
+                {
+                    title: 'Mental Health Workshop',
+                    date: '24th August 2024',
+                    time: '9.OO AM - 10.30 AM',
+                    description: "Unwind and Relax with Yoga!",
+                    imageUrl: 'Images/Mental Health Workshop.PNG',
+                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236',
+                    category: 'upcoming'
+                },
+                {
+                    title: 'Zine Workshop',
+                    date: '24th August 2024',
+                    time: '10.00 AM - 1.00 PM',
+                    description: "Find ways to manage stress!",
+                    imageUrl: 'Images/Zine Making.PNG',
+                    formUrl: 'https://forms.gle/vBrqGAEpeLth7T236',
+                    category: 'upcoming'
                 }
-                // Add more events for February
-            ],
-            // Add events for other months
+
+            ]
         };
 
-        function showEvents(month) {
+        function showEventsByCategory(category) {
             const eventList = document.getElementById('event-list');
             eventList.innerHTML = '';
 
-            if (month === "") {
-                // Show all events
-                for (const month in events) {
-                    events[month].forEach(event => {
-                        const eventCard = document.createElement('div');
-                        eventCard.className = 'col-md-6 mb-4';
-                        eventCard.innerHTML = `
-                                <div class="card" >
-                                    <img src="${event.imageUrl}" class="card-img-top event-img" alt="${event.title}">
-                                    <div class="card-body">
-                                        <h6 class="card-date">${event.date}</h6>
-                                        <h5 class="card-title">${event.title}</h5>
-                                        <p class="card-text">${event.description}</p>
-                                        <a href="${event.formUrl}" class="btn btn-primary" target="_blank">Sign Up</a>
-
-                                    </div>
-                                </div>
-                            `;
-                        eventList.appendChild(eventCard);
-                    });
-                }
-            } else {
-                // Show events for the selected month
-                if (events[month]) {
-                    events[month].forEach(event => {
+            for (const month in events) {
+                events[month].forEach(event => {
+                    if (event.category === category) {
                         const eventCard = document.createElement('div');
                         eventCard.className = 'col-md-6 mb-4';
                         eventCard.innerHTML = `
                                 <div class="card">
                                     <img src="${event.imageUrl}" class="card-img-top event-img" alt="${event.title}">
                                     <div class="card-body">
-                                        <h6 class="card-date">${event.date}</h6>
+                                        <div id="DateTime">
+                                            <h6 class="card-date">${event.date}</h6>
+                                            <h6 class="card-time">${event.time}</h6>
+                                        </div>
                                         <h5 class="card-title">${event.title}</h5>
                                         <p class="card-text">${event.description}</p>
                                         <a href="${event.formUrl}" class="btn btn-primary" target="_blank">Sign Up</a>
-
                                     </div>
                                 </div>
                             `;
                         eventList.appendChild(eventCard);
-                    });
-                } else {
-                    eventList.innerHTML = '<p class="text-center">No events available for this month.</p>';
-                }
+                    }
+                });
             }
         }
 
-        // Show all events on page load
+        // Show ongoing events on page load
         document.addEventListener('DOMContentLoaded', function () {
-            showEvents("");
+            document.getElementById('categorySelect').value = 'ongoing';
+            showEventsByCategory('ongoing');
         });
     </script>
     <script>

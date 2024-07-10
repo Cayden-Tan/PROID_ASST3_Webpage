@@ -39,10 +39,13 @@ nav ul {
 h1 {
     color: #333;
 }
-.card-date {
+#DateTime {
     opacity: 0.5;
     padding-left: 10px;
     border-left: 4px solid red;
+}
+.card-date {
+    font-weight: bold;
 }
 h5 {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -81,4 +84,8 @@ footer {
     background-color: #e9ecef; /* Change the background color */
     border-radius: 15px; /* Add curved edges */
     margin-bottom: 20px; /* Add some space between containers */
+}
+
+#eventsTab {
+    padding-bottom: 10px;
 }

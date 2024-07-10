@@ -73,6 +73,67 @@ h4 {
 #featureimg{
     justify-content: center;
 }
+#mentalWellnessCarousel {
+    margin: 0 auto;
+    max-width: 700px; /* Adjust this value as needed */
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#mentalWellnessCarousel img.fixed-height {
+    object-fit: contain;
+    justify-content: center;
+    height: 400px;
+
+}
+#ArtsCornerCarousel {
+    margin: 0 auto;
+    max-width: 700px; /* Adjust this value as needed */
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#ArtsCornerCarousel img.fixed-height {
+        object-fit: contain;
+        justify-content: center;
+        height: 400px;
+}
+
+#mentalWellnessCarousel .carousel-control-prev-icon,
+#mentalWellnessCarousel .carousel-control-next-icon {
+    background-color: transparent; /* Ensure the background is transparent */
+    width: 40px;
+    height: 40px;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+}
+
+#mentalWellnessCarousel .carousel-control-prev-icon {
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 8 8"%3e%3cpath d="M2.5 0l.5.5-2.5 2.5 2.5 2.5-.5.5-3-3 3-3z" transform="translate(0 1)" /%3e%3c/svg%3e');
+}
+
+#mentalWellnessCarousel .carousel-control-next-icon {
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 8 8"%3e%3cpath d="M5.5 0l-.5.5 2.5 2.5-2.5 2.5.5.5 3-3-3-3z" transform="translate(0 1)" /%3e%3c/svg%3e');
+}
+
+#ArtsCornerCarousel .carousel-control-prev-icon,
+#ArtsCornerCarousel .carousel-control-next-icon {
+    background-color: transparent; /* Ensure the background is transparent */
+    width: 40px;
+    height: 40px;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+}
+
+#ArtsCornerCarousel .carousel-control-prev-icon {
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 8 8"%3e%3cpath d="M2.5 0l.5.5-2.5 2.5 2.5 2.5-.5.5-3-3 3-3z" transform="translate(0 1)" /%3e%3c/svg%3e');
+}
+
+#ArtsCornerCarousel .carousel-control-next-icon {
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 8 8"%3e%3cpath d="M5.5 0l-.5.5 2.5 2.5-2.5 2.5.5.5 3-3-3-3z" transform="translate(0 1)" /%3e%3c/svg%3e');
+}
+
 
 hr {
     border: 1px solid #333; /* Customize the color and thickness */
@@ -99,7 +160,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
-.carousel-inner img {
+#TOPCarou img {
     height: 100vh; /* Adjust the height as needed */
     object-fit: cover; /* Ensure the image covers the area without distortion */
 }
